@@ -7,4 +7,4 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: build vault-operator docker image
-        run: make -f vault-operator/Makefile
+        run: make -f vault-operator/Makefile build

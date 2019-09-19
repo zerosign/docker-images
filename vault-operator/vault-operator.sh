@@ -88,7 +88,7 @@ function init() {
 function policy-init() {
     POLICES=($(find $POLICY_PATH -name "*.hcl" -type f))
     for path in "${POLICES[@]}"; do
-        echo $path
+        echo "initiate policy path: $path"
         policy=$(echo $path | awk -F"/" '{ print $NF }' | tr "_" " " | tr "." " " | awk -F" " '{ print $2 }')
         policy-exists $1 $policy
         if [ "$POLICY_EXISTS" = "404" ] || [ "$POLICY_EXISTS" = "400" ]; then
