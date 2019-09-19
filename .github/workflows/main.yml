@@ -1,0 +1,10 @@
+name: auto-build
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: build vault-operator docker image
+        run: make -f vault-operator/Makefile
