@@ -9,4 +9,6 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: release vault-operator to docker registry
-        run: make -f vault-operator/Makefile release
+        run: |
+          docker login --username=$DOCKERHUB_USERNAME --password=$DOCKERHUB_PASSWORD
+          make -f vault-operator/Makefile release
